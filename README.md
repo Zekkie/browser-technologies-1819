@@ -1,38 +1,40 @@
-# Browser Technologies @cmda-minor-web 1819
-//Robuuste, toegankelijke websites leren bouwen …
+# Zekkie's wacky website
 
-In het vak Browser Technologies leer je hoe je goede, robuuste, toegankelijke websites maakt. Je gaat leren over Progressive Enhancement, Feature Detection en Fallback. Het web is er voor iedereen. In dit vak leer je hoe je daarvoor kan zorgen.
+## JS
 
-Een van de mooiste principes van het web is dat het er echt is voor iedereen. Iedereen met een computer en een browser moet gebruik kunnen maken van het web. Het web is geen gecontroleerde (programmeer) omgeving. Je kan er gerust van uit gaan dat niemand precies hetzelfde te zien krijgt als wat jij ziet in jouw browser. Er zijn natuurlijk de technische beperkingen. Zoals - Afmetingen van de browser - Grootte van het apparaat - Manier van interactie - Kwaliteit van de hardware - Kwaliteit van het netwerk. En er zijn mensen. Allemaal verschillende mensen ...
+This site is not working without JS. Why? Because it was build with pure JS.
 
-## Leerdoelen
-- _Wat is Progressive enhancement en hoe kun je dit toepassen._
-- _Hoe doe je Feature Detection en wat doe je als een techniek niet werkt of wordt ondersteund._
-- _Leren een Browser Technologies onderzoeken, testen en implementeren als enhancement._
+### Solution
 
-[Rubric](https://docs.google.com/spreadsheets/d/1X8XBbblGAcoij4zPcbjZ5FHcQMusn1hc0NvNkzP5qx4/edit?usp=sharing)
+This site should be rendered serverside and served as plain html to the user
 
-## Programma
+## Cookies/LocalStorage
 
-### Week 1
-Het web is voor iedereen. Leren over Progressive enhancement en kennismaken met testen en het device lab.
-- [Les 1 - Progressive enhancement & Briefing Opdracht 1.1](https://docs.google.com/presentation/d/1j2N22palCDin_0jX89DItLj9kQy8YhwwuvcA_XnhjWQ/edit?usp=sharing)
-- [Les 2 - Features testen & Briefing opdracht 1.2](https://docs.google.com/presentation/d/1wGrwgvMTiQbdwgUEFveMFQEfv0Dbe2DJEUgq45zPiN4/edit?usp=sharing)
-- [Opdracht 1.1 - Breek het web](Opdracht1.1.md)
-- [Opdracht 1.2 - Fork je OBA](Opdracht1.2.md)
+No cookies/LS has been used. My site does not use any of these tech
 
-- Weekly Nerd: ICONS met Maike Klip - ontwerpen voor vluchtelingen. Woensdag 13 Maart, 16:00 in de Medialounge van het Theo Thijssenhuis.
+## No mouse/trackpad
 
-### Week 2
-Wat laat je zien als een browser of gebruiker een 'enhancement' niet kan tonen of zien? Hoe doe je Feature Detection en wat doe je als een techniek niet werkt of wordt ondersteund?
+Oops, all elements are clickable div's. So it will not respond on anything else but clicks. And even then, there are no focus states available. 
 
-- [Opdracht 2 - Progressive Enhanced Browser Technologie](Opdracht2.md)
+### Solution
 
-- Weekly Nerd: A11y met Ischa Gast - Schiphol.
+Make actual buttons/anchors out of the elements. So the user can actually interact with the website. Add focus states, maybe even acces keys. Tabindex?
 
+## Color
 
-### Week 3
-Verder werken aan de opdracht.
+The contrast is good so no changes needed here
+
+## Images
+
+Nothing to see here, just text.
+
+## Custom fonts
+
+Naah, oldschool Arial with sans-serif fallbacks.
 
 
-- Weekly Nerd: PE bij de Voorhoede.
+# TODO
+
+	- Accesibilty is pretty wack, so much work is needed on that subject
+	- The website has to be rendered on a server to serve plain html to the user
+	- TEST WITH SCREENREADERS AND ON WACKY DEVICES/BROWSERS
