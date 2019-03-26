@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="refresh" content="10")
+		title Document
+	body
+		div.time 
+			p=match.minuut
+		h1=match.team_thuis.naam + " vs " + match.team_uit.naam
+		div.score
+			p.score_home=match.team_thuis.score
+			p.spacer -
+			p.score_home=match.team_uit.score
+
+		a(href="/match?id=" + match.id) Update

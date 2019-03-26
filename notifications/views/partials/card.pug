@@ -1,0 +1,11 @@
+a(href="/match?id="+match.id)
+	div.time
+		p=match.minuut
+	div.match
+		p.team_home=match.team_thuis.naam
+		p.vs vs
+		p.team_out=match.team_uit.naam
+	div.score
+		p.score_home=match.team_thuis.score
+		p.score_spacer -
+		p.score_out=match.team_uit.score
