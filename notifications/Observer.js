@@ -1,0 +1,25 @@
+class Observer {
+	constructor(props) {
+		this.observers = [];
+	};
+
+	notify(data) {
+		this.observers.forEach((r) => {
+			if(!r.headersSent) {
+				r.send(data);
+			};
+		})
+		this.flush();
+	};
+
+	flush() {
+		this.observers = [];
+	};
+
+	subscribe(pendingRequest) {
+		this.observers.push(pendingRequest);
+	};
+
+};
+
+module.exports = Observer;

@@ -8,12 +8,13 @@ window.onload = function() {
 		const xhr = new XMLHttpRequest();
 
 		xhr.onload = function(e) {
+			console.log(e)
 			poll()
 		}
 
-		xhr.open("get","http://192.168.178.15:2000/poll", true)
+		xhr.open("get",window.location.origin+"/poll", true)
 		xhr.send()
-		console.log(xhr)
+
 	}
 
 	poll();
