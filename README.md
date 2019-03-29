@@ -9,7 +9,7 @@ But not in the World of Webcraft. There is no control on the how the user will u
 That is why you should develop a website where the core functionality works across all browsers under virtually every circumstance. Do you want extra functionality? Build ontop of your core functionality.
 
 ## Wireflow
-![Wireflow]('./img-bin/wireflow.png')
+![Wireflow](./img-bin/wireflow.png)
 
 
 ## Feature
