@@ -1,5 +1,6 @@
 class Observer {
-	constructor(props) {
+	constructor(id) {
+		this.id = id
 		this.observers = [];
 	};
 

@@ -1,36 +1,26 @@
 process.env.PORT = 2000;
 
-
 const express = require("express");
 const app = express();
+const server = require("http").Server(app);
+const io = require("socket.io")(server);
 const cors = require("cors");
 const Observer = require("./Observer.js");
 
-const matchObserver = new Observer();
-
-
-app.set("view engine", "pug");
-app.set("views", "./views");
-app.use(express.static("static"));
-app.use(cors());
-
-
 const date = new Date();
 
-
-
-
-
-
-const updateTime = () => {
-	let time = 0;
-	setInterval(() => {
-		matchObserver.notify(data);
-	}, 1000)
+function getKey(array, item) {
+	for(let i = 0; i < array.length; i++) {
+		if(array[i].id == item.id) {
+			return i;
+			break;
+		}
+		
+	}
 }
 
 
-updateTime();
+const matchObservers = [];
 
 const data = [
 	{
@@ -61,29 +51,64 @@ const data = [
 	},
 ]
 
+
+data.forEach((d) => {
+	matchObservers.push(new Observer(d.id));
+});
+
+
+
+app.set("view engine", "pug");
+app.set("views", "./views");
+app.use(express.static("static"));
+app.use(cors());
+
+
+
+
+
+io.on("connect", (s) => {
+	s.emit("cp-data", data)
+	s.on("score", (d) => {
+		data[getKey(data, d)] = d;
+		const observer = matchObservers.find((o) => {
+			return o.id === d.id;
+		});
+		observer.notify(d);
+	});
+});
+
+
 const initialPage = (req, res) => {
-	res.render("index", {data:data})
-}
+
+	res.render("index", {data: data});
+
+};
 
 const matchPage = (req, res) => {
+
 	const q = parseInt(req.query.id); 
 	const matchData = data.find((m) => {
 		return m.id === q;
-	})
+	});
 	res.render("match", {match: matchData});
 };
 
 const poll = (req, res) => {
-	matchObserver.subscribe(res);
+	const id = parseInt(req.query.id);
+	const observer = matchObservers.find((o) => {
+		return o.id === id;
+	});
+	observer.subscribe(res);
+};
+
+const controlpannel = (req, res) => {
+	res.sendfile("./static/controlpannel/controlpannel.html");
 };
 
 app.get("/",initialPage);
-
-
-app.get("/match", matchPage)
-
+app.get("/match", matchPage);
 app.get("/poll", poll);
+app.get("/controlpannel", controlpannel);
 
-app.listen(process.env.PORT, () => {
-	console.log('APP IS RUNNING ON PORT: ' + process.env.PORT)
-});
+server.listen(process.env.PORT);
