@@ -3,10 +3,10 @@ window.onload = function() {
 		window.ABORT_REQUEST =  new Event("abort-request");
 	};
 	if("XMLHttpRequest" in window) {
-		let state = false;
-		const wrapper = document.querySelector(".match-wrapper");
-		const label = document.createElement("label");
-		const button = document.createElement("button");
+		var state = false;
+		var wrapper = document.getElementByClassName(".match-wrapper");
+		var label = document.createElement("label");
+		var button = document.createElement("button");
 		button.innerHTML = "Zet live updates aan";
 		button.style.background = "red";
 		wrapper.appendChild(button);
@@ -24,16 +24,16 @@ window.onload = function() {
 				this.innerHTML = "Zet live updates aan";
 			};
 		};
-		const meta = document.querySelector(".disable");
+		var meta = document.getElementByClassName(".disable")[0];
 		window.stop();
 		document.head.removeChild(meta);
-		const score_home = document.querySelector(".score_home");
-		const score_out = document.querySelector(".score_out");
-		const poll = function() {
-			const xhr = new XMLHttpRequest();
+		var score_home = document.getElementByClassName(".score_home")[0];
+		var score_out = document.getElementByClassName(".score_out")[0];
+		var poll = function() {
+			var xhr = new XMLHttpRequest();
 			console.log(xhr)
 			xhr.onload = function(e) {
-				const data = JSON.parse(e.currentTarget.response);
+				var data = JSON.parse(e.currentTarget.response);
 				score_out.innerText = data.team_uit.score;
 				score_home.innerText = data.team_thuis.score;
 				poll();

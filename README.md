@@ -1,40 +1,16 @@
-# Zekkie's wacky website
+# BROWSER TECH ENDGAME
 
-## JS
+## What is PE and why does it matter..
 
-This site is not working without JS. Why? Because it was build with pure JS.
+In the ideal world of software development, we can develop for a specific CPU architecture. It will work on virtually every on devices that uses the same instruction set. 
 
-### Solution
+But not in the World of Webcraft. There is no control on the how the user will use your website, when your user will use your website and under what circumstances. Heck, even the browser developers have their own wild fantasy.. XMLHttpRequest? No, internet explorer has to call their Ajax object ActiveXObject..
 
-This site should be rendered serverside and served as plain html to the user
+That is why you should develop a website where the core functionality works across all browsers under virtually every circumstance. Do you want extra functionality? Build ontop of your core functionality.
 
-## Cookies/LocalStorage
-
-No cookies/LS has been used. My site does not use any of these tech
-
-## No mouse/trackpad
-
-Oops, all elements are clickable div's. So it will not respond on anything else but clicks. And even then, there are no focus states available. 
-
-### Solution
-
-Make actual buttons/anchors out of the elements. So the user can actually interact with the website. Add focus states, maybe even acces keys. Tabindex?
-
-## Color
-
-The contrast is good so no changes needed here
-
-## Images
-
-Nothing to see here, just text.
-
-## Custom fonts
-
-Naah, oldschool Arial with sans-serif fallbacks.
+## Wireflow
+![Wireflow]('./img-bin/wireflow.png')
 
 
-# TODO
+## Feature
 
-	- Accesibilty is pretty wack, so much work is needed on that subject
-	- The website has to be rendered on a server to serve plain html to the user
-	- TEST WITH SCREENREADERS AND ON WACKY DEVICES/BROWSERS
