@@ -2,15 +2,18 @@
 html(lang="en")
 	head
 		meta(charset="UTF-8")
-		meta(http-equiv="refresh" content="10")
+		meta.disable(http-equiv="refresh" content="10")
+		link(rel="stylesheet", href="/style.css")
+		script(src="/script.js")
 		title Document
-	body
-		div.time 
-			p=match.minuut
-		h1=match.team_thuis.naam + " vs " + match.team_uit.naam
-		div.score
-			p.score_home=match.team_thuis.score
-			p.spacer -
-			p.score_home=match.team_uit.score
+	body.center
+		div.match-wrapper
+			div.time 
+				p=match.minuut
+			h1=match.team_thuis.naam + " vs " + match.team_uit.naam
+			div.score
+				p.score_home=match.team_thuis.score
+				p.spacer -
+				p.score_home=match.team_uit.score
 
-		a(href="/match?id=" + match.id) Update
+			a(href="/match?id=" + match.id) Update
