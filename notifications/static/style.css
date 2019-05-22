@@ -71,13 +71,27 @@ div > p {
 
 
 .match-wrapper {
-	background: grey;
+	background: #ecf0f1;
 	width: 300px;
 	display: flex;
 	flex-direction: column;
 	padding:20px;
+	border-radius:3px;
+	box-shadow: 0 2px 5px #e0e4e5;
 }
 
 .match-wrapper a {
 	width: 300px;
+}
+
+button{
+	padding:10px;
+	border:0;
+	font-size:1em;
+	cursor: pointer;
+}
+
+button:hover,button:focus{
+	background: #34495e!important;
+	color:#ffffff;
 }

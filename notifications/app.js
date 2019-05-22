@@ -1,4 +1,4 @@
-process.env.PORT = 2000;
+process.env.PORT = 80;
 
 const express = require("express");
 const app = express();

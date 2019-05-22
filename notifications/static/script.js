@@ -8,19 +8,19 @@ window.onload = function() {
 		var label = document.createElement("label");
 		var button = document.createElement("button");
 		button.innerHTML = "Zet live updates aan";
-		button.style.background = "red";
+		button.style.background = "#e74c3c";
 		wrapper.appendChild(button);
 		button.onclick = function() {
 			if(!state) {
 				state = true;
-				button.style.background = "green";
+				button.style.background = "#2ecc71";
 				this.innerHTML = "Zet live updates uit";
 				console.log("Start Polling");
 				poll();
 			}else if(state) {
 				dispatchEvent(ABORT_REQUEST);
 				state = false;
-				button.style.background = "red";
+				button.style.background = "#e74c3c";
 				this.innerHTML = "Zet live updates aan";
 			};
 		};
