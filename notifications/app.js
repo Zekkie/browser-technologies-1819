@@ -105,9 +105,24 @@ const controlpannel = (req, res) => {
 	res.sendfile("./static/controlpannel/controlpannel.html");
 };
 
+const currentScore = (req, res) => {
+	const id =+ req.query.id;
+
+	const match = data.find(i => {
+		return i.id = id;
+	});
+
+
+
+	res.send(JSON.stringify(match));
+}
+
+
 app.get("/",initialPage);
 app.get("/match", matchPage);
 app.get("/poll", poll);
 app.get("/controlpannel", controlpannel);
+app.get("/currentscore", currentScore)
+
 
 server.listen(process.env.PORT);
