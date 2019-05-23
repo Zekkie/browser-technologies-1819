@@ -61,6 +61,29 @@ I've used html as it should be, no clickable div's. No weird stuff.
 
 I created a live region with a paragraph element, where custom messages can be read for screenreaders when a team has scored.
 
+
+## Contrast
+
+### Normal
+
+![Normal](https://i.gyazo.com/588ed1f3dc5789e01466ec97a34bca27.png)
+
+### Red blind
+
+![Red](https://i.gyazo.com/9db315a0fb2d17d50ad40582cd49ced4.png)
+
+### Green blind
+
+![Green](https://i.gyazo.com/1e8503bc8e3eabeea2922a3f5f9136b9.png)
+
+### Blue blind
+
+![Blue](https://i.gyazo.com/9dcaa4a8b92d5951d37ddb29f491b0cd.png)
+
+### Monochromacy
+
+![Mono](https://i.gyazo.com/948fdc223221c363e577229c004ad650.png)
+
 ## Wireflow
 ![Wireflow](./img-bin/wireflow.png)
 
